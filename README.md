@@ -56,8 +56,8 @@ Tener instalado Maven o Gradle.
 Tener una cuenta de Google para generar las claves de reCAPTCHA.
 
 2. Clonar el Repositorio
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/CarlosZuluagaU/SpringBootCaptcha.git
+cd https://github.com/CarlosZuluagaU/SpringBootCaptcha.git
 
 3. Configurar Google reCAPTCHA
 Este es el paso más importante para que la aplicación funcione correctamente.
@@ -66,7 +66,7 @@ Ve a la Consola de Administración de Google reCAPTCHA.
 
 Crea una nueva propiedad para tu sitio:
 
-Etiqueta: El nombre que prefieras (ej. "Mi Portafolio Spring").
+Etiqueta: Nombre que usted quiera
 
 Tipo de reCAPTCHA: Selecciona reCAPTCHA v3.
 
