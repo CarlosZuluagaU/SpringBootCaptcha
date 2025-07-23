@@ -1,4 +1,5 @@
 # SpringBootCaptcha
+Esta aplicación también cuenta con un fronted para mejor visualización donde se ve en la primera isntancia un espacio con el contenido que se encuentra en la base de datos, don todos los usuarios, después otra interfaz para poder registrar el nuevo usuario y automáticamente aparece en la base de datos.
 Gestión de Empleados con Spring Boot y Google reCAPTCHA
 Este es un proyecto de demostración que implementa un CRUD básico (Crear y Leer) para la gestión de empleados, construido con Spring Boot en el backend y Thymeleaf para la renderización de las vistas. La aplicación cuenta con una interfaz de usuario moderna y responsiva creada con Tailwind CSS y está asegurada con Google reCAPTCHA v3 para proteger el envío de formularios.
 
