@@ -107,6 +107,11 @@ Usando Gradle:
 Una vez que la aplicación se esté ejecutando, abre tu navegador y ve a:
 http://localhost:8080
 
+INFORMACION IMPORTANTE 
+la clave que se encuentra en el poyecto para realizar el captcha ya no es fucniona, por terminos de privacidad y de google terms, pero si quieres que funcione en tu pc
+tu debes crear la clave del captcha y reemplazar los valores existentes, esto hará que funcione correctamente, como los valores que yo tenía pertenecian al captcha que yo cree 
+ahora los modificqué porque no puedo compartir ningún tipo de clave por normas de GitHub 
+
 👤 Autor
 Carlos Andrés Zuluaga Amaya
 
