@@ -107,7 +107,7 @@ Una vez que la aplicación se esté ejecutando, abre tu navegador y ve a:
 http://localhost:8080
 
 👤 Autor
-[Tu Nombre]
+Carlos Andrés Zuluaga Amaya
 
 GitHub: CarlosZuluagaU
 
