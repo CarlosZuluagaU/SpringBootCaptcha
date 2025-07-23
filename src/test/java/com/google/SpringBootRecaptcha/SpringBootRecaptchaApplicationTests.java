@@ -8,6 +8,8 @@ class SpringBootRecaptchaApplicationTests {
 
 	@Test
 	void contextLoads() {
+
+
 	}
 
 }

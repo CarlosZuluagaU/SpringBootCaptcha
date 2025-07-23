@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario - Portafolio</title>
+
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <style>
+        /* Custom styles to apply the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom focus styles for better accessibility and aesthetics */
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #3b82f6; /* Blue-500 */
+            border-color: #3b82f6;
+        }
+        /* Style for the date picker icon */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            filter: invert(0.6);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 antialiased">
+
+<!-- Main container -->
+<div class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-lg mx-auto bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Crear Nuevo Usuario</h1>
+            <p class="text-gray-400">Completa los datos para registrar un empleado.</p>
+        </div>
+
+        <!-- Form with new ID for reCAPTCHA callback -->
+        <form id="demo-form" th:action="@{/create/process}" method="post" th:object="${employee}">
+
+            <!-- Name Input -->
+            <div class="mb-5">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Nombre</label>
+                <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-user text-gray-400"></i>
+                        </span>
+                    <input type="text" class="form-input bg-gray-700 border border-gray-600 text-white text-sm rounded-lg block w-full pl-10 p-2.5 transition duration-300" id="name" name="name" th:field="*{name}" placeholder="Ej: John" required/>
+                </div>
+            </div>
+
+            <!-- Last Name Input -->
+            <div class="mb-5">
+                <label for="lastName" class="block mb-2 text-sm font-medium text-gray-300">Apellido</label>
+                <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-user-friends text-gray-400"></i>
+                        </span>
+                    <input type="text" class="form-input bg-gray-700 border border-gray-600 text-white text-sm rounded-lg block w-full pl-10 p-2.5 transition duration-300" id="lastName" name="lastName" th:field="*{lastName}" placeholder="Ej: Doe" required/>
+                </div>
+            </div>
+
+            <!-- Date of Birth Input -->
+            <div class="mb-6">
+                <label for="dateOfBirth" class="block mb-2 text-sm font-medium text-gray-300">Fecha de nacimiento</label>
+                <div class="relative">
+                         <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-calendar-alt text-gray-400"></i>
+                         </span>
+                    <input type="date" class="form-input bg-gray-700 border border-gray-600 text-white text-sm rounded-lg block w-full pl-10 p-2.5 transition duration-300" id="dateOfBirth" name="dateOfBirth" th:field="*{dateOfBirth}" required/>
+                </div>
+            </div>
+
+            <!-- Action Buttons with reCAPTCHA on the submit button -->
+            <div class="flex flex-col sm:flex-row sm:justify-center gap-4 mt-8">
+                <button
+                        class="g-recaptcha w-full sm:w-auto text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-6 py-3 text-center transition duration-300 shadow-lg shadow-blue-500/30"
+                        th:attr="data-sitekey='6LfPDo0rAAAAAE1LTUdKoexaX6gLAmMqGW6bZl_R'"
+                        data-callback='onSubmit'
+                        data-action='submit'>
+                    Enviar
+                </button>
+                <a th:href="@{/}" class="w-full sm:w-auto text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-800 font-medium rounded-lg text-sm px-6 py-3 text-center transition duration-300 shadow-lg shadow-red-500/30">
+                    Cancelar
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Script for reCAPTCHA callback -->
+<script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+</script>
+
+</body>
+</html>
